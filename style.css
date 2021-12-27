@@ -1,0 +1,69 @@
+/* reset inspired by https://www.joshwcomeau.com/css/custom-css-reset/ */
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select { font: inherit; }
+p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
+
+/* layout */
+:root {         --page-width: 36em; }
+@media screen and (max-width: 42em) {
+  :root {       --page-width: 100%; }
+  .page:first-child {
+    margin-top: 0;
+  }
+  .page:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* theme */
+:root { /* default dark theme */
+  --page-bg: #333;
+  --primary-bg: #222;
+  --primary-fg: #ccc;
+  --link: #69f;
+  --shadow: #000;
+}
+@media screen and (prefers-color-scheme: light) {
+  :root {
+    --page-bg: #fff;
+    --primary-bg: #eee;
+    --primary-fg: #333;
+    --link: #46e;
+    --shadow: #888;
+  }
+}
+
+/* base styles */
+a {
+  color: var(--link);
+}
+body {
+  background: var(--primary-bg);
+  color: var(--primary-fg);
+  font-family: serif;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-family: sans-serif;
+}
+html {
+  font-size: 18px;
+}
+p {
+  margin: 1em 0;
+}
+.page {
+  background: var(--page-bg);
+  box-shadow: 0 0 10px var(--shadow);
+  margin: 1em auto;
+  max-width: var(--page-width);
+  padding: 1em;
+}
