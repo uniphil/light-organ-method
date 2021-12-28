@@ -29,7 +29,9 @@ p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
   --page-bg: #333;
   --primary-bg: #222;
   --primary-fg: #ccc;
-  --link: #69f;
+  --link: #6bf;
+  --link-active-bg: #358;
+  --link-visited: #b6f;
   --shadow: #000;
 }
 @media screen and (prefers-color-scheme: light) {
@@ -38,6 +40,8 @@ p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
     --primary-bg: #eee;
     --primary-fg: #333;
     --link: #46e;
+    --link-active-bg: #fdf;
+    --link-visited: #93d;
     --shadow: #888;
   }
 }
@@ -46,6 +50,12 @@ p, h1, h2, h3, h4, h5, h6 { overflow-wrap: break-word; }
 a {
   color: var(--link);
 }
+a:active {
+  background: var(--link-active-bg);
+}
+a:visited {
+  color: var(--link-visited);
+}
 body {
   background: var(--primary-bg);
   color: var(--primary-fg);
@@ -53,17 +63,44 @@ body {
 }
 h1, h2, h3, h4, h5, h6 {
   font-family: sans-serif;
+  margin: 1.5em 0 0;
 }
 html {
   font-size: 18px;
 }
+ol p, ul p {
+  margin: 0.5em 0;
+}
 p {
   margin: 1em 0;
 }
+
+/* pages */
 .page {
   background: var(--page-bg);
   box-shadow: 0 0 10px var(--shadow);
   margin: 1em auto;
   max-width: var(--page-width);
   padding: 1em;
+}
+.page > h1:first-child {
+  margin-top: 0.5em;
+}
+
+/* license */
+footer {
+  font-family: sans-serif;
+  font-size: 13px;
+  text-align: center;
+  opacity: 0.667;
+  transition: opacity 0.1s;
+}
+footer:hover {
+  opacity: 1;
+}
+footer img[src^="https://mirrors.creativecommons.org/presskit/icons/"] {
+  display: inline-block;
+  height: 1em;
+  margin-left: 2px;
+  vertical-align: text-bottom;
 }
