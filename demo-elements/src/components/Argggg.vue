@@ -1,18 +1,12 @@
 <template>
-  <div class="raw-volume">
-    <h2>sup</h2>
-    <p>file: {{ file }}</p>
+  <div>
+    <h2>placeholder</h2>
+    <p>because the build command behaves differently when naming webcomponents if more than one component is built.</p>
   </div>
 </template>
 
 <script>
   export default {
-    props: ['file']
+    props: []
   }
 </script>
-
-<style>
-  .raw-volume {
-    font-family: sans-serif;
-  }
-</style>
